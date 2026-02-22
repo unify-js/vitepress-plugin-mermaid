@@ -1,0 +1,71 @@
+{
+  "name": "@unify-js/vitepress-plugin-mermaid",
+  "version": "0.1.0",
+  "description": "VitePress plugin for Mermaid diagram preview with fullscreen, zoom, and pan support",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./theme": {
+      "types": "./dist/theme.d.ts",
+      "import": "./dist/theme.js"
+    },
+    "./mermaid-markdown": {
+      "types": "./dist/mermaid-markdown.d.ts",
+      "import": "./dist/mermaid-markdown.js"
+    },
+    "./components/Mermaid.vue": {
+      "types": "./dist/components/Mermaid.vue.d.ts",
+      "import": "./dist/components/Mermaid.vue"
+    },
+    "./components/MermaidPreview.vue": {
+      "types": "./dist/components/MermaidPreview.vue.d.ts",
+      "import": "./dist/components/MermaidPreview.vue"
+    },
+    "./composables/useMermaidPreview": {
+      "types": "./dist/composables/useMermaidPreview.d.ts",
+      "import": "./dist/composables/useMermaidPreview.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && vite build",
+    "dev": "vite build --watch",
+    "playground": "vite playground --config playground/vite.config.ts",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "keywords": [
+    "vitepress",
+    "mermaid",
+    "diagram",
+    "preview",
+    "plugin"
+  ],
+  "author": "Luo Huidong",
+  "license": "MIT",
+  "peerDependencies": {
+    "mermaid": "^11.0.0",
+    "vitepress": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@vitejs/plugin-vue": "^5.0.0",
+    "mermaid": "^11.0.0",
+    "prettier": "^3.5.0",
+    "typescript": "^5.0.0",
+    "vite": "^6.0.0",
+    "vitepress": "^1.6.0",
+    "vue": "^3.5.28"
+  }
+}
