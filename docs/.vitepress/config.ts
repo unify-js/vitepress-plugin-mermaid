@@ -44,7 +44,8 @@ export default defineConfig({
               { text: 'Getting Started', link: 'getting-started' },
               { text: 'Configuration', link: 'configuration' },
               { text: 'Usage', link: 'usage' },
-              { text: 'Shortcuts', link: 'shortcuts' }
+              { text: 'Shortcuts', link: 'shortcuts' },
+              { text: 'Development', link: 'development' }
             ]
           },
           '/en/api/': {
@@ -111,7 +112,8 @@ export default defineConfig({
               { text: '快速开始', link: 'getting-started' },
               { text: '配置', link: 'configuration' },
               { text: '使用', link: 'usage' },
-              { text: '快捷键', link: 'shortcuts' }
+              { text: '快捷键', link: 'shortcuts' },
+              { text: '开发指南', link: 'development' }
             ]
           },
           '/zh/api/': {
