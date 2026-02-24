@@ -69,8 +69,8 @@ export default {
     return h(DefaultTheme.Layout, null, {
       'layout-bottom': () => h(MermaidPreview),
     });
-  }
-} as Theme;
+  },
+} satisfies Theme;
 ```
 
 ### 功能
@@ -105,8 +105,8 @@ import type { Theme } from 'vitepress';
 import mermaidPluginTheme from '@unify-js/vitepress-plugin-mermaid/theme';
 
 export default {
-  extends: mermaidPluginTheme
-} as Theme;
+  extends: mermaidPluginTheme,
+} satisfies Theme;
 ```
 
 或手动：
@@ -123,8 +123,8 @@ export default {
   enhanceApp({ app }) {
     app.component('Mermaid', Mermaid);
     app.component('MermaidPreview', MermaidPreview);
-  }
-} as Theme;
+  },
+} satisfies Theme;
 ```
 
 ### 本地使用

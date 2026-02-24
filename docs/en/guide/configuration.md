@@ -128,8 +128,8 @@ export default {
   enhanceApp(ctx) {
     // Your custom enhancements
     enhanceAppWithMermaid(ctx);
-  }
-} as Theme;
+  },
+} satisfies Theme;
 ```
 
 ### Programmatic Control

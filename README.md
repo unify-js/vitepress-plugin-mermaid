@@ -32,8 +32,8 @@ import type { Theme } from 'vitepress';
 import mermaidPluginTheme from '@unify-js/vitepress-plugin-mermaid/theme';
 
 export default {
-  extends: mermaidPluginTheme
-} as Theme;
+  extends: mermaidPluginTheme,
+} satisfies Theme;
 ```
 
 ### Method 2: Manual Configuration
@@ -57,8 +57,8 @@ export default {
     return h(DefaultTheme.Layout, null, {
       'layout-bottom': () => h(MermaidPreview),
     });
-  }
-} as Theme;
+  },
+} satisfies Theme;
 ```
 
 ### Configure markdown-it Plugin

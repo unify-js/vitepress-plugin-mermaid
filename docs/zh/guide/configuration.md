@@ -128,8 +128,8 @@ export default {
   enhanceApp(ctx) {
     // 您的自定义增强
     enhanceAppWithMermaid(ctx);
-  }
-} as Theme;
+  },
+} satisfies Theme;
 ```
 
 ### 程序化控制
