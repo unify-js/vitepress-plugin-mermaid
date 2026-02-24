@@ -7,7 +7,7 @@ interface PreviewState {
 
 const state = ref<PreviewState>({
   isOpen: false,
-  svg: ''
+  svg: '',
 });
 
 /**
@@ -40,7 +40,7 @@ export function useMermaidPreview() {
     isOpen: computed(() => state.value.isOpen),
     svg: computed(() => state.value.svg),
     open,
-    close
+    close,
   };
 }
 

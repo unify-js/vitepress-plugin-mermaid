@@ -16,8 +16,8 @@ export default defineConfig({
       mermaidMarkdownPlugin(md, {
         // Configuration options
       });
-    }
-  }
+    },
+  },
 });
 ```
 

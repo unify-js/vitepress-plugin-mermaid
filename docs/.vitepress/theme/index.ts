@@ -11,7 +11,7 @@ export default {
   },
   Layout() {
     return h(DefaultTheme.Layout, null, {
-      'layout-bottom': () => h(MermaidPreview)
+      'layout-bottom': () => h(MermaidPreview),
     });
-  }
+  },
 } satisfies Theme;

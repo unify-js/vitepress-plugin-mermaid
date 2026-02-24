@@ -41,7 +41,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  showCode: false
+  showCode: false,
 });
 
 const container = ref<HTMLElement>();
@@ -69,9 +69,9 @@ const renderMermaid = async () => {
         primaryBorderColor: isDark.value ? '#4a90d9' : '#0288d1',
         lineColor: isDark.value ? '#4a90d9' : '#0288d1',
         secondaryColor: isDark.value ? '#4a3d2a' : '#fff3e0',
-        tertiaryColor: isDark.value ? '#2d4a2d' : '#e8f5e9'
+        tertiaryColor: isDark.value ? '#2d4a2d' : '#e8f5e9',
       },
-      startOnLoad: false
+      startOnLoad: false,
     });
 
     // 渲染图表

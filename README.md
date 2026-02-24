@@ -55,7 +55,7 @@ export default {
   },
   Layout() {
     return h(DefaultTheme.Layout, null, {
-      'layout-bottom': () => h(MermaidPreview)
+      'layout-bottom': () => h(MermaidPreview),
     });
   }
 } as Theme;
@@ -73,8 +73,8 @@ export default defineConfig({
   markdown: {
     config: md => {
       mermaidMarkdownPlugin(md);
-    }
-  }
+    },
+  },
 });
 ```
 

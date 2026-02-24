@@ -27,9 +27,9 @@ export default defineConfig({
       entry: {
         index: resolve(__dirname, 'src/index.ts'),
         theme: resolve(__dirname, 'src/theme.ts'),
-        'mermaid-markdown': resolve(__dirname, 'src/mermaid-markdown.ts')
+        'mermaid-markdown': resolve(__dirname, 'src/mermaid-markdown.ts'),
       },
-      formats: ['es']
+      formats: ['es'],
     },
     rollupOptions: {
       external: [
@@ -37,9 +37,9 @@ export default defineConfig({
         'vitepress',
         'mermaid',
         /^vitepress\/.*/,
-        /\.vue$/ // 将所有 .vue 文件视为外部依赖，不打包
-      ]
-    }
+        /\.vue$/, // 将所有 .vue 文件视为外部依赖，不打包
+      ],
+    },
   },
   plugins: [
     {
@@ -53,7 +53,7 @@ export default defineConfig({
           entry => entry.endsWith('.vue')
         );
         console.log('✓ Copied .vue files to dist/');
-      }
-    }
-  ]
+      },
+    },
+  ],
 });

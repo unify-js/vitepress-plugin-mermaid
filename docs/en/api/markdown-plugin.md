@@ -23,8 +23,8 @@ export default defineConfig({
   markdown: {
     config: md => {
       mermaidMarkdownPlugin(md);
-    }
-  }
+    },
+  },
 });
 ```
 
