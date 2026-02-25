@@ -1,45 +1,59 @@
-# VitePress Mermaid
+---
+layout: home
 
-强大的 VitePress 插件，为您的文档带来交互式的 Mermaid 图表预览功能。
+hero:
+  name: 'VitePress Mermaid'
+  text: '交互式 Mermaid 图表'
+  tagline: 为文档带来全屏预览、缩放和平移支持的 VitePress Mermaid 插件
+  actions:
+    - theme: brand
+      text: 快速开始
+      link: /zh/guide/getting-started
+    - theme: alt
+      text: 查看示例
+      link: /zh/examples/
+    - theme: alt
+      text: GitHub
+      link: https://github.com/unify-js/vitepress-plugin-mermaid-preview
 
-## 这是什么？
+features:
+  - icon: 🎯
+    title: 点击预览
+    details: 点击文档中的任何 Mermaid 图表，以全屏模式打开，获得更好的查看体验。
+  - icon: 🔍
+    title: 缩放与平移
+    details: 使用鼠标滚轮或键盘快捷键自由缩放，拖拽平移浏览大型图表。
+  - icon: 🌓
+    title: 暗黑模式支持
+    details: 自动适配 VitePress 浅色/深色主题，切换流畅自然。
+  - icon: ⌨️
+    title: 键盘快捷键
+    details: ESC 关闭，Ctrl/Cmd +/- 缩放，Ctrl/Cmd 0 重置 - 直观高效。
+  - icon: 📱
+    title: 响应式设计
+    details: 移动端友好，支持触摸手势进行缩放和平移操作。
+  - icon: ⚡
+    title: 轻松集成
+    details: 通过主题扩展或手动配置简单设置 - 任您选择。
+---
 
-**VitePress Mermaid** 通过添加交互式预览功能来增强您的文档。当读者点击图表时，会以全屏模态框打开，他们可以：
+<style>
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe 30%, #41d1ff);
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, #bd34fe 50%, #47caff 50%);
+  --vp-home-hero-image-filter: blur(44px);
+}
 
-- **缩放** 查看细节
-- **拖拽** 在大图表中移动
-- 使用 **键盘快捷键** 快速导航
-- 享受 **流畅动画** 和 **暗黑模式** 支持
+.VPFeature {
+  border-radius: 12px;
+  padding: 24px;
+  background-color: var(--vp-c-bg-soft);
+  transition: all 0.3s ease;
+}
 
-## 快速预览
-
-点击下方的图表来体验预览功能：
-
-```mermaid
-graph TD
-    A[文档] --> B{VitePress}
-    B --> C[Mermaid 图表]
-    C --> D[点击预览]
-    D --> E[全屏模式]
-    E --> F[缩放与拖拽]
-    F --> G[更好的理解]
-    style A fill:#bd34fe,color:#fff
-    style G fill:#41d1ff,color:#000
-```
-
-## 为什么要使用这个插件？
-
-| 特性           | 好处                     |
-| -------------- | ------------------------ |
-| **全屏预览**   | 无需滚动即可查看复杂图表 |
-| **缩放控制**   | 检查大图中的细节         |
-| **拖拽/平移**  | 轻松浏览大型图表         |
-| **键盘快捷键** | 快速高效的控制           |
-| **暗黑模式**   | 无缝主题切换             |
-| **移动端支持** | 移动设备上的触摸手势     |
-
-## 下一步
-
-- **[快速开始](./guide/getting-started.md)** - 安装和配置插件
-- **[配置](./guide/configuration.md)** - 根据需要自定义插件
-- **[示例](./examples/)** - 查看各种类型的图表效果
+.VPFeature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+</style>

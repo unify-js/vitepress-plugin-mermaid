@@ -40,6 +40,7 @@ export default defineConfig({
           '/en/guide/': {
             base: '/en/guide/',
             items: [
+              { text: 'What is VitePress Mermaid?', link: 'what-is-vitepress-mermaid' },
               { text: 'Getting Started', link: 'getting-started' },
               { text: 'Configuration', link: 'configuration' },
               { text: 'Usage', link: 'usage' },
@@ -108,6 +109,7 @@ export default defineConfig({
           '/zh/guide/': {
             base: '/zh/guide/',
             items: [
+              { text: '什么是 VitePress Mermaid？', link: 'what-is-vitepress-mermaid' },
               { text: '快速开始', link: 'getting-started' },
               { text: '配置', link: 'configuration' },
               { text: '使用', link: 'usage' },
