@@ -61,7 +61,7 @@ graph TB
 The preview supports a wide range of zoom levels:
 
 - **Minimum**: 0.1x (10% of original size)
-- **Maximum**: 5x (500% of original size)
+- **Maximum**: 10x (1000% of original size)
 - **Step**: 0.1x increments
 
 ## Accessibility
