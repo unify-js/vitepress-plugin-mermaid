@@ -58,7 +58,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, watch } from 'vue';
-import { useMermaidPreview } from '../composables/useMermaidPreview';
+import { useMermaidPreview } from './useMermaidPreview';
 
 const { isOpen, svg, close } = useMermaidPreview();
 

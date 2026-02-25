@@ -6,11 +6,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 # Development
-pnpm dev              # Build library in watch mode
+pnpm dev              # Build library in watch mode (tsc --watch)
 pnpm docs:dev         # Start docs dev server
 
 # Build
-pnpm build            # Build library for production (tsc + vite build)
+pnpm build            # Build library for production (tsc only)
 pnpm docs:build       # Build documentation site
 
 # Code Quality
@@ -36,16 +36,18 @@ This is a VitePress plugin that adds fullscreen preview functionality for Mermai
 
 ### Build System
 
-The build uses a two-step process:
+The build uses TypeScript compiler (`tsc`) with a post-build copy step:
 
-1. `tsc` compiles TypeScript and generates `.d.ts` files
-2. Vite bundles JS into ES modules with multiple entry points (index, theme, mermaid-markdown)
+1. `tsc` compiles TypeScript files and generates `.d.ts` declarations
+2. `scripts/copy-components.js` copies Vue SFCs and composables to `dist/components/`
 
-Vue SFCs (`.vue` files) are **not bundled** - they are copied as-is to `dist/` via a custom Vite plugin. This allows consumers to import them directly:
+Vue SFCs (`.vue` files) are **distributed as source** - not compiled. This allows consumers to import them directly:
 
 ```typescript
 import Mermaid from '@unify-js/vitepress-plugin-mermaid/components/Mermaid.vue';
 ```
+
+Note: The `src/components` directory is excluded from TypeScript compilation since these files are copied as-is to `dist/`.
 
 ### Key Patterns
 
@@ -58,11 +60,10 @@ import Mermaid from '@unify-js/vitepress-plugin-mermaid/components/Mermaid.vue';
 
 ```
 src/
-├── components/          # Vue SFCs (copied to dist, not bundled)
+├── components/          # Vue SFCs (distributed as source, not compiled)
 │   ├── Mermaid.vue
-│   └── MermaidPreview.vue
-├── composables/         # Compiled by tsc
-│   └── useMermaidPreview.ts
+│   ├── MermaidPreview.vue
+│   └── useMermaidPreview.ts  # Internal state management
 ├── index.ts            # Main exports
 ├── theme.ts            # Theme integration
 └── mermaid-markdown.ts # Markdown-it plugin
@@ -98,3 +99,15 @@ Prettier configuration (from `.prettierrc`):
 - Tab width: 2
 - Trailing comma: es5
 - Print width: 100
+
+### Documentation Maintenance
+
+**After changing code logic, check if documentation updates are needed:**
+
+- Update `README.md` if the changes affect public API or usage instructions
+- Update `docs/` directory if the changes affect:
+  - Configuration options (`docs/[lang]/guide/configuration.md`)
+  - Usage instructions (`docs/[lang]/guide/usage.md`, `docs/[lang]/guide/getting-started.md`)
+  - Development guidelines (`docs/[lang]/guide/development.md`)
+  - API documentation (`docs/[lang]/api/`)
+- Ensure both English (`docs/en/`) and Chinese (`docs/zh/`) docs are updated

@@ -11,8 +11,7 @@ packages/vitepress-plugin-mermaid-preview/
 ├── src/
 │   ├── components/
 │   │   ├── Mermaid.vue           # Diagram rendering component (Vue SFC)
-│   │   └── MermaidPreview.vue    # Fullscreen preview component (Vue SFC)
-│   ├── composables/
+│   │   ├── MermaidPreview.vue    # Fullscreen preview component (Vue SFC)
 │   │   └── useMermaidPreview.ts  # Internal state management
 │   ├── index.ts                  # Main entry, exports public features
 │   ├── theme.ts                  # Theme configuration, one-click integration
@@ -24,15 +23,12 @@ packages/vitepress-plugin-mermaid-preview/
 │   ├── theme.d.ts                # Type declarations
 │   ├── mermaid-markdown.js       # markdown-it plugin
 │   ├── mermaid-markdown.d.ts     # Type declarations
-│   ├── components/
-│   │   ├── Mermaid.vue           # Vue SFC (copied)
-│   │   └── MermaidPreview.vue    # Vue SFC (copied)
-│   └── composables/
-│       ├── useMermaidPreview.js  # Internal composable (not exported)
-│       └── useMermaidPreview.d.ts # Type declarations
+│   └── components/               # Copied from src/components
+│       ├── Mermaid.vue
+│       ├── MermaidPreview.vue
+│       └── useMermaidPreview.ts
 ├── package.json
 ├── tsconfig.json
-├── vite.config.ts
 └── README.md
 ```
 

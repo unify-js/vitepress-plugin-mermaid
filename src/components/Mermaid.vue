@@ -32,7 +32,7 @@
 import { ref, computed, onMounted, watch } from 'vue';
 import { useData } from 'vitepress';
 import mermaid from 'mermaid';
-import { useMermaidPreview } from '../composables/useMermaidPreview';
+import { useMermaidPreview } from './useMermaidPreview';
 
 interface Props {
   id: string;
