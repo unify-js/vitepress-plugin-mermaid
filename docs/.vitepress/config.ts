@@ -7,6 +7,10 @@ export default defineConfig({
   description:
     'VitePress plugin for Mermaid diagram preview with fullscreen, zoom, and pan support',
 
+  rewrites: {
+    'en/:pages*': ':pages*',
+  },
+
   lastUpdated: true,
   cleanUrls: true,
   metaChunk: true,
@@ -29,16 +33,15 @@ export default defineConfig({
     root: {
       label: 'English',
       lang: 'en',
-      link: '/en/',
       themeConfig: {
         nav: [
-          { text: 'Guide', link: '/en/guide/getting-started' },
-          { text: 'API', link: '/en/api/' },
-          { text: 'Examples', link: '/en/examples/' },
+          { text: 'Guide', link: '/guide/getting-started' },
+          { text: 'API', link: '/api/' },
+          { text: 'Examples', link: '/examples/' },
         ],
         sidebar: {
-          '/en/guide/': {
-            base: '/en/guide/',
+          '/guide/': {
+            base: '/guide/',
             items: [
               { text: 'What is VitePress Mermaid?', link: 'what-is-vitepress-mermaid' },
               { text: 'Getting Started', link: 'getting-started' },
@@ -48,16 +51,16 @@ export default defineConfig({
               { text: 'Development', link: 'development' },
             ],
           },
-          '/en/api/': {
-            base: '/en/api/',
+          '/api/': {
+            base: '/api/',
             items: [
               { text: 'Overview', link: 'index' },
               { text: 'Components', link: 'components' },
               { text: 'Markdown Plugin', link: 'markdown-plugin' },
             ],
           },
-          '/en/examples/': {
-            base: '/en/examples/',
+          '/examples/': {
+            base: '/examples/',
             items: [
               { text: 'Overview', link: 'index' },
               { text: 'Flowchart', link: 'flowchart' },
