@@ -28,5 +28,3 @@ export const mermaidMarkdownPlugin = (md: MarkdownRenderer) => {
     return defaultRenderer(tokens, index, options, env, slf);
   };
 };
-
-export default mermaidMarkdownPlugin;
