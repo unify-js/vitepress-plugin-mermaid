@@ -21,16 +21,7 @@ export const mermaidMarkdownPlugin = (md: MarkdownRenderer) => {
       const showCode = language === 'mermaid-example';
       const graph = encodeURIComponent(token.content);
 
-      return `
-<Suspense>
-  <template #default>
-    <Mermaid id="${key}" :showCode="${showCode}" graph="${graph}" />
-  </template>
-  <template #fallback>
-    <div class="mermaid-loading">Loading diagram...</div>
-  </template>
-</Suspense>
-`;
+      return `<Mermaid id="${key}" :showCode="${showCode}" graph="${graph}" />`;
     }
 
     // 其他代码块使用默认渲染
