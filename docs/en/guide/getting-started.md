@@ -9,22 +9,22 @@ Install the plugin using your preferred package manager:
 ::: code-group
 
 ```bash [pnpm]
-pnpm add -D @unify-js/vitepress-plugin-mermaid
+pnpm add -D @unify-js/vitepress-mermaid
 ```
 
 ```bash [npm]
-npm install -D @unify-js/vitepress-plugin-mermaid
+npm install -D @unify-js/vitepress-mermaid
 ```
 
 ```bash [yarn]
-yarn add -D @unify-js/vitepress-plugin-mermaid
+yarn add -D @unify-js/vitepress-mermaid
 ```
 
 :::
 
 ## Dependency Requirements
 
-This plugin requires the following dependencies to work properly. Please make sure they are installed:
+This custom theme requires the following dependencies to work properly. Please make sure they are installed:
 
 ```bash
 pnpm add -D vitepress mermaid
@@ -38,7 +38,7 @@ Create or edit your `.vitepress/config.ts` file:
 
 ```typescript
 import { defineConfig } from 'vitepress';
-import { mermaidMarkdownPlugin } from '@unify-js/vitepress-plugin-mermaid';
+import { mermaidMarkdownPlugin } from '@unify-js/vitepress-mermaid';
 
 export default defineConfig({
   markdown: {
@@ -53,14 +53,14 @@ export default defineConfig({
 
 #### Option A: Theme Extension (Recommended)
 
-The easiest way to integrate is by extending the plugin's theme:
+The easiest way to integrate is by extending the custom theme:
 
 ```typescript
 import type { Theme } from 'vitepress';
-import mermaidPluginTheme from '@unify-js/vitepress-plugin-mermaid/theme';
+import mermaidTheme from '@unify-js/vitepress-mermaid';
 
 export default {
-  extends: mermaidPluginTheme,
+  extends: mermaidTheme,
 } satisfies Theme;
 ```
 
@@ -72,7 +72,7 @@ For more control, manually register the components:
 import { h } from 'vue';
 import type { Theme } from 'vitepress';
 import DefaultTheme from 'vitepress/theme';
-import { Mermaid, MermaidPreview } from '@unify-js/vitepress-plugin-mermaid';
+import { Mermaid, MermaidPreview } from '@unify-js/vitepress-mermaid';
 
 export default {
   extends: DefaultTheme,

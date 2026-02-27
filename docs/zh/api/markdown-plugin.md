@@ -5,9 +5,7 @@
 ## 导入
 
 ```typescript
-import { mermaidMarkdownPlugin } from '@unify-js/vitepress-plugin-mermaid/mermaid-markdown';
-// 或
-import { mermaidMarkdownPlugin } from '@unify-js/vitepress-plugin-mermaid';
+import { mermaidMarkdownPlugin } from '@unify-js/vitepress-mermaid';
 ```
 
 ## 配置
@@ -17,7 +15,7 @@ import { mermaidMarkdownPlugin } from '@unify-js/vitepress-plugin-mermaid';
 ```typescript
 // .vitepress/config.ts
 import { defineConfig } from 'vitepress';
-import { mermaidMarkdownPlugin } from '@unify-js/vitepress-plugin-mermaid/mermaid-markdown';
+import { mermaidMarkdownPlugin } from '@unify-js/vitepress-mermaid';
 
 export default defineConfig({
   markdown: {

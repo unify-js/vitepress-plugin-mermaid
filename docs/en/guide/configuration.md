@@ -8,7 +8,7 @@ The `mermaidMarkdownPlugin` function accepts an optional configuration object:
 
 ```typescript
 import { defineConfig } from 'vitepress';
-import { mermaidMarkdownPlugin } from '@unify-js/vitepress-plugin-mermaid/mermaid-markdown';
+import { mermaidMarkdownPlugin } from '@unify-js/vitepress-mermaid';
 
 export default defineConfig({
   markdown: {
@@ -54,7 +54,7 @@ The `MermaidPreview` component handles the fullscreen preview modal. It's automa
 
 ### CSS Variables
 
-The plugin uses CSS variables that you can override:
+The custom theme uses CSS variables that you can override:
 
 ```css
 /* Custom styles for the preview modal */
@@ -90,7 +90,7 @@ graph TD
 
 ### Type Declarations
 
-The plugin includes TypeScript declarations. If you encounter issues with `.vue` files, ensure your `tsconfig.json` includes:
+The custom theme includes TypeScript declarations. If you encounter issues with `.vue` files, ensure your `tsconfig.json` includes:
 
 ```json
 {
@@ -116,12 +116,12 @@ declare module '*.vue' {
 
 ### Custom Theme Integration
 
-If you have a custom VitePress theme, you can integrate the plugin components:
+If you have a custom VitePress theme, you can integrate the custom theme components:
 
 ```typescript
 import type { Theme } from 'vitepress';
 import CustomTheme from './CustomTheme.vue';
-import { enhanceAppWithMermaid } from '@unify-js/vitepress-plugin-mermaid';
+import { enhanceAppWithMermaid } from '@unify-js/vitepress-mermaid';
 
 export default {
   extends: CustomTheme,

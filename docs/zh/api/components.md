@@ -1,6 +1,6 @@
 # 组件
 
-插件提供的 Vue 组件。
+自定义主题提供的 Vue 组件。
 
 ## Mermaid
 
@@ -9,7 +9,7 @@
 ### 导入
 
 ```typescript
-import Mermaid from '@unify-js/vitepress-plugin-mermaid/components/Mermaid.vue';
+import { Mermaid } from '@unify-js/vitepress-mermaid';
 ```
 
 ### 属性
@@ -22,7 +22,7 @@ import Mermaid from '@unify-js/vitepress-plugin-mermaid/components/Mermaid.vue';
 
 ```vue
 <script setup>
-import Mermaid from '@unify-js/vitepress-plugin-mermaid/components/Mermaid.vue';
+import { Mermaid } from '@unify-js/vitepress-mermaid';
 
 const diagramCode = `
 graph TD
@@ -49,7 +49,7 @@ graph TD
 ### 导入
 
 ```typescript
-import MermaidPreview from '@unify-js/vitepress-plugin-mermaid/components/MermaidPreview.vue';
+import { MermaidPreview } from '@unify-js/vitepress-mermaid';
 ```
 
 ### 用法
@@ -61,7 +61,7 @@ import MermaidPreview from '@unify-js/vitepress-plugin-mermaid/components/Mermai
 import type { Theme } from 'vitepress';
 import DefaultTheme from 'vitepress/theme';
 import { h } from 'vue';
-import MermaidPreview from '@unify-js/vitepress-plugin-mermaid/components/MermaidPreview.vue';
+import { MermaidPreview } from '@unify-js/vitepress-mermaid';
 
 export default {
   extends: DefaultTheme,
@@ -90,10 +90,10 @@ export default {
 ```typescript
 // .vitepress/theme/index.ts
 import type { Theme } from 'vitepress';
-import mermaidPluginTheme from '@unify-js/vitepress-plugin-mermaid/theme';
+import mermaidTheme from '@unify-js/vitepress-mermaid';
 
 export default {
-  extends: mermaidPluginTheme,
+  extends: mermaidTheme,
 } satisfies Theme;
 ```
 
@@ -103,8 +103,8 @@ export default {
 // .vitepress/theme/index.ts
 import type { Theme } from 'vitepress';
 import DefaultTheme from 'vitepress/theme';
-import Mermaid from '@unify-js/vitepress-plugin-mermaid/components/Mermaid.vue';
-import MermaidPreview from '@unify-js/vitepress-plugin-mermaid/components/MermaidPreview.vue';
+import { Mermaid } from '@unify-js/vitepress-mermaid';
+import { MermaidPreview } from '@unify-js/vitepress-mermaid';
 
 export default {
   extends: DefaultTheme,
@@ -119,7 +119,7 @@ export default {
 
 ```vue
 <script setup>
-import Mermaid from '@unify-js/vitepress-plugin-mermaid/components/Mermaid.vue';
+import { Mermaid } from '@unify-js/vitepress-mermaid';
 </script>
 
 <template>

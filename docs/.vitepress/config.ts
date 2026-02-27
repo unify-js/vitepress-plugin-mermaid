@@ -5,7 +5,7 @@ import { mermaidMarkdownPlugin } from '../../src/';
 export default defineConfig({
   title: 'VitePress Mermaid',
   description:
-    'VitePress plugin for Mermaid diagram preview with fullscreen, zoom, and pan support',
+    'VitePress custom theme for Mermaid diagram preview with fullscreen, zoom, and pan support',
 
   rewrites: {
     'en/:pages*': ':pages*',

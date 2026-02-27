@@ -4,7 +4,7 @@ layout: home
 hero:
   name: 'VitePress Mermaid'
   text: 'Interactive Mermaid Diagrams'
-  tagline: A VitePress plugin for Mermaid diagram preview with fullscreen, zoom, and pan support
+  tagline: A VitePress custom theme for Mermaid diagram preview with fullscreen, zoom, and pan support
   actions:
     - theme: brand
       text: Get Started

@@ -4,27 +4,27 @@
 
 ## 安装
 
-使用您喜欢的包管理器安装插件：
+使用您喜欢的包管理器安装自定义主题：
 
 ::: code-group
 
 ```bash [pnpm]
-pnpm add -D @unify-js/vitepress-plugin-mermaid
+pnpm add -D @unify-js/vitepress-mermaid
 ```
 
 ```bash [npm]
-npm install -D @unify-js/vitepress-plugin-mermaid
+npm install -D @unify-js/vitepress-mermaid
 ```
 
 ```bash [yarn]
-yarn add -D @unify-js/vitepress-plugin-mermaid
+yarn add -D @unify-js/vitepress-mermaid
 ```
 
 :::
 
 ## 依赖要求
 
-本插件需要以下依赖才能正常工作，请确保已安装：
+本自定义主题需要以下依赖才能正常工作，请确保已安装：
 
 ```bash
 pnpm add -D vitepress mermaid
@@ -38,7 +38,7 @@ pnpm add -D vitepress mermaid
 
 ```typescript
 import { defineConfig } from 'vitepress';
-import { mermaidMarkdownPlugin } from '@unify-js/vitepress-plugin-mermaid';
+import { mermaidMarkdownPlugin } from '@unify-js/vitepress-mermaid';
 
 export default defineConfig({
   markdown: {
@@ -53,14 +53,14 @@ export default defineConfig({
 
 #### 选项 A：主题扩展（推荐）
 
-最简单的集成方式是通过扩展插件的主题：
+最简单的集成方式是通过扩展自定义主题：
 
 ```typescript
 import type { Theme } from 'vitepress';
-import mermaidPluginTheme from '@unify-js/vitepress-plugin-mermaid/theme';
+import mermaidTheme from '@unify-js/vitepress-mermaid';
 
 export default {
-  extends: mermaidPluginTheme,
+  extends: mermaidTheme,
 } satisfies Theme;
 ```
 
@@ -72,7 +72,7 @@ export default {
 import { h } from 'vue';
 import type { Theme } from 'vitepress';
 import DefaultTheme from 'vitepress/theme';
-import { Mermaid, MermaidPreview } from '@unify-js/vitepress-plugin-mermaid';
+import { Mermaid, MermaidPreview } from '@unify-js/vitepress-mermaid';
 
 export default {
   extends: DefaultTheme,

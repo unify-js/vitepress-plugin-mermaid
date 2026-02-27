@@ -1,6 +1,6 @@
 # VitePress Mermaid
 
-A powerful VitePress plugin that brings interactive Mermaid diagram preview to your documentation.
+A powerful VitePress custom theme that brings interactive Mermaid diagram preview to your documentation.
 
 ## What is it?
 
@@ -27,7 +27,7 @@ graph TD
     style G fill:#41d1ff,color:#000
 ```
 
-## Why Use This Plugin?
+## Why Use This Custom Theme?
 
 | Feature                | Benefit                                   |
 | ---------------------- | ----------------------------------------- |
@@ -40,6 +40,6 @@ graph TD
 
 ## Next Steps
 
-- **[Getting Started](./guide/getting-started.md)** - Install and configure the plugin
-- **[Configuration](./guide/configuration.md)** - Customize the plugin to your needs
+- **[Getting Started](./guide/getting-started.md)** - Install and configure the custom theme
+- **[Configuration](./guide/configuration.md)** - Customize the theme to your needs
 - **[Examples](./examples/)** - See various diagram types in action

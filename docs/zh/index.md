@@ -4,7 +4,7 @@ layout: home
 hero:
   name: 'VitePress Mermaid'
   text: '交互式 Mermaid 图表'
-  tagline: 为文档带来全屏预览、缩放和平移支持的 VitePress Mermaid 插件
+  tagline: 为文档带来全屏预览、缩放和平移支持的 VitePress Mermaid 自定义主题
   actions:
     - theme: brand
       text: 快速开始

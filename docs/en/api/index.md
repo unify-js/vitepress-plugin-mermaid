@@ -4,28 +4,28 @@ Complete API reference for VitePress Mermaid.
 
 ## Package Exports
 
-All APIs are exported from the main entry point `@unify-js/vitepress-plugin-mermaid`:
+All APIs are exported from the main entry point `@unify-js/vitepress-mermaid`:
 
 ```typescript
 // Default export: theme configuration
-import mermaidPluginTheme from '@unify-js/vitepress-plugin-mermaid';
+import mermaidTheme from '@unify-js/vitepress-mermaid';
 
 // Named exports
 import {
   mermaidMarkdownPlugin, // Markdown-it plugin
   Mermaid, // Diagram component
   MermaidPreview, // Preview modal component
-} from '@unify-js/vitepress-plugin-mermaid';
+} from '@unify-js/vitepress-mermaid';
 ```
 
 ## Main Exports
 
-### `mermaidPluginTheme`
+### `mermaidTheme`
 
 Default theme export for easy integration:
 
 ```typescript
-import mermaidPluginTheme from '@unify-js/vitepress-plugin-mermaid/theme';
+import mermaidTheme from '@unify-js/vitepress-mermaid';
 ```
 
 ### `mermaidMarkdownPlugin`
@@ -33,7 +33,7 @@ import mermaidPluginTheme from '@unify-js/vitepress-plugin-mermaid/theme';
 Markdown-it plugin for processing Mermaid code blocks:
 
 ```typescript
-import { mermaidMarkdownPlugin } from '@unify-js/vitepress-plugin-mermaid';
+import { mermaidMarkdownPlugin } from '@unify-js/vitepress-mermaid';
 ```
 
 ### `enhanceAppWithMermaid`
@@ -41,7 +41,7 @@ import { mermaidMarkdownPlugin } from '@unify-js/vitepress-plugin-mermaid';
 Helper function to register components in your theme:
 
 ```typescript
-import { enhanceAppWithMermaid } from '@unify-js/vitepress-plugin-mermaid';
+import { enhanceAppWithMermaid } from '@unify-js/vitepress-mermaid';
 ```
 
 ## Modules

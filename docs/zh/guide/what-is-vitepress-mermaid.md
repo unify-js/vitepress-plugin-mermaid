@@ -1,6 +1,6 @@
 # VitePress Mermaid
 
-强大的 VitePress 插件，为您的文档带来交互式的 Mermaid 图表预览功能。
+强大的 VitePress 自定义主题，为您的文档带来交互式的 Mermaid 图表预览功能。
 
 ## 这是什么？
 
@@ -27,7 +27,7 @@ graph TD
     style G fill:#41d1ff,color:#000
 ```
 
-## 为什么要使用这个插件？
+## 为什么要使用这个自定义主题？
 
 | 特性           | 好处                     |
 | -------------- | ------------------------ |
@@ -40,6 +40,6 @@ graph TD
 
 ## 下一步
 
-- **[快速开始](./guide/getting-started.md)** - 安装和配置插件
-- **[配置](./guide/configuration.md)** - 根据需要自定义插件
+- **[快速开始](./guide/getting-started.md)** - 安装和配置自定义主题
+- **[配置](./guide/configuration.md)** - 根据需要自定义主题
 - **[示例](./examples/)** - 查看各种类型的图表效果

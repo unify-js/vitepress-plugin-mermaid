@@ -1,6 +1,6 @@
-# @unify-js/vitepress-plugin-mermaid
+# @unify-js/vitepress-mermaid
 
-A VitePress plugin that provides fullscreen preview functionality for Mermaid diagrams, supporting zoom and drag-to-pan interactions.
+A VitePress custom theme that provides fullscreen preview functionality for Mermaid diagrams, supporting zoom and drag-to-pan interactions.
 
 ## Features
 
@@ -14,16 +14,16 @@ A VitePress plugin that provides fullscreen preview functionality for Mermaid di
 ## Installation
 
 ```bash
-pnpm add @unify-js/vitepress-plugin-mermaid
+pnpm add @unify-js/vitepress-mermaid
 # or
-npm install @unify-js/vitepress-plugin-mermaid
+npm install @unify-js/vitepress-mermaid
 # or
-yarn add @unify-js/vitepress-plugin-mermaid
+yarn add @unify-js/vitepress-mermaid
 ```
 
 ## Dependency Requirements
 
-This plugin requires the following dependencies to work properly. Please make sure they are installed:
+This custom theme requires the following dependencies to work properly. Please make sure they are installed:
 
 ```bash
 pnpm add -D vitepress mermaid
@@ -37,10 +37,10 @@ In `.vitepress/theme/index.ts`:
 
 ```typescript
 import type { Theme } from 'vitepress';
-import mermaidPluginTheme from '@unify-js/vitepress-plugin-mermaid';
+import mermaidTheme from '@unify-js/vitepress-mermaid';
 
 export default {
-  extends: mermaidPluginTheme,
+  extends: mermaidTheme,
 } satisfies Theme;
 ```
 
@@ -52,7 +52,7 @@ For more flexible control, you can configure manually:
 import { h } from 'vue';
 import type { Theme } from 'vitepress';
 import DefaultTheme from 'vitepress/theme';
-import { Mermaid, MermaidPreview } from '@unify-js/vitepress-plugin-mermaid';
+import { Mermaid, MermaidPreview } from '@unify-js/vitepress-mermaid';
 
 export default {
   extends: DefaultTheme,
@@ -74,7 +74,7 @@ In `.vitepress/config.ts`:
 
 ```typescript
 import { defineConfig } from 'vitepress';
-import { mermaidMarkdownPlugin } from '@unify-js/vitepress-plugin-mermaid';
+import { mermaidMarkdownPlugin } from '@unify-js/vitepress-mermaid';
 
 export default defineConfig({
   markdown: {
@@ -87,7 +87,7 @@ export default defineConfig({
 
 ## Using in Markdown
 
-The plugin automatically recognizes `mermaid` code blocks:
+The custom theme automatically recognizes `mermaid` code blocks:
 
 ````markdown
 ```mermaid
@@ -118,7 +118,7 @@ graph LR
 markdown-it plugin that converts mermaid code blocks to Vue components.
 
 ```typescript
-import { mermaidMarkdownPlugin } from '@unify-js/vitepress-plugin-mermaid';
+import { mermaidMarkdownPlugin } from '@unify-js/vitepress-mermaid';
 
 md.use(mermaidMarkdownPlugin);
 ```

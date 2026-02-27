@@ -8,7 +8,7 @@
 
 ```typescript
 import { defineConfig } from 'vitepress';
-import { mermaidMarkdownPlugin } from '@unify-js/vitepress-plugin-mermaid/mermaid-markdown';
+import { mermaidMarkdownPlugin } from '@unify-js/vitepress-mermaid';
 
 export default defineConfig({
   markdown: {
@@ -54,7 +54,7 @@ graph TD
 
 ### CSS 变量
 
-插件使用 CSS 变量，您可以覆盖它们：
+自定义主题使用 CSS 变量，您可以覆盖它们：
 
 ```css
 /* 预览模态框的自定义样式 */
@@ -90,7 +90,7 @@ graph TD
 
 ### 类型声明
 
-插件包含 TypeScript 声明。如果遇到 `.vue` 文件的问题，请确保您的 `tsconfig.json` 包含：
+自定义主题包含 TypeScript 声明。如果遇到 `.vue` 文件的问题，请确保您的 `tsconfig.json` 包含：
 
 ```json
 {
@@ -116,12 +116,12 @@ declare module '*.vue' {
 
 ### 自定义主题集成
 
-如果您有自定义的 VitePress 主题，可以集成插件组件：
+如果您有自定义的 VitePress 主题，可以集成自定义主题组件：
 
 ```typescript
 import type { Theme } from 'vitepress';
 import CustomTheme from './CustomTheme.vue';
-import { enhanceAppWithMermaid } from '@unify-js/vitepress-plugin-mermaid';
+import { enhanceAppWithMermaid } from '@unify-js/vitepress-mermaid';
 
 export default {
   extends: CustomTheme,

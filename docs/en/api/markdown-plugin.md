@@ -5,9 +5,7 @@ The markdown-it plugin that transforms Mermaid code blocks into interactive comp
 ## Import
 
 ```typescript
-import { mermaidMarkdownPlugin } from '@unify-js/vitepress-plugin-mermaid/mermaid-markdown';
-// or
-import { mermaidMarkdownPlugin } from '@unify-js/vitepress-plugin-mermaid';
+import { mermaidMarkdownPlugin } from '@unify-js/vitepress-mermaid';
 ```
 
 ## Configuration
@@ -17,7 +15,7 @@ import { mermaidMarkdownPlugin } from '@unify-js/vitepress-plugin-mermaid';
 ```typescript
 // .vitepress/config.ts
 import { defineConfig } from 'vitepress';
-import { mermaidMarkdownPlugin } from '@unify-js/vitepress-plugin-mermaid/mermaid-markdown';
+import { mermaidMarkdownPlugin } from '@unify-js/vitepress-mermaid';
 
 export default defineConfig({
   markdown: {

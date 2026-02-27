@@ -132,7 +132,7 @@ classDiagram
 graph TB
     subgraph "前端"
         A[VitePress] --> B[Vue 组件]
-        B --> C[Mermaid 插件]
+        B --> C[Mermaid 主题]
     end
 
     subgraph "图表渲染"

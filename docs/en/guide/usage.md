@@ -132,7 +132,7 @@ Try interacting with this larger diagram:
 graph TB
     subgraph "Frontend"
         A[VitePress] --> B[Vue Components]
-        B --> C[Mermaid Plugin]
+        B --> C[Mermaid Theme]
     end
 
     subgraph "Diagram Rendering"
