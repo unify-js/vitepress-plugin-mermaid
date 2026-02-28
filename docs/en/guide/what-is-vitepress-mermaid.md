@@ -41,5 +41,5 @@ graph TD
 ## Next Steps
 
 - **[Getting Started](./guide/getting-started.md)** - Install and configure the custom theme
-- **[Configuration](./guide/configuration.md)** - Customize the theme to your needs
+- **[Development](./guide/development.md)** - Understand architecture and entry separation
 - **[Examples](./examples/)** - See various diagram types in action

@@ -209,4 +209,3 @@ graph LR
 
 - 探索更多 [图表示例](../examples/)
 - 了解 [键盘快捷键](./shortcuts.md)
-- 查看 [API 参考](../api/)

@@ -37,7 +37,6 @@ export default withMermaidConfig(
         themeConfig: {
           nav: [
             { text: 'Guide', link: '/guide/getting-started' },
-            { text: 'API', link: '/api/' },
             { text: 'Examples', link: '/examples/' },
           ],
           sidebar: {
@@ -46,18 +45,9 @@ export default withMermaidConfig(
               items: [
                 { text: 'What is VitePress Mermaid?', link: 'what-is-vitepress-mermaid' },
                 { text: 'Getting Started', link: 'getting-started' },
-                { text: 'Configuration', link: 'configuration' },
                 { text: 'Usage', link: 'usage' },
                 { text: 'Shortcuts', link: 'shortcuts' },
                 { text: 'Development', link: 'development' },
-              ],
-            },
-            '/api/': {
-              base: '/api/',
-              items: [
-                { text: 'Overview', link: 'index' },
-                { text: 'Components', link: 'components' },
-                { text: 'Markdown Plugin', link: 'markdown-plugin' },
               ],
             },
             '/examples/': {
@@ -106,7 +96,6 @@ export default withMermaidConfig(
         themeConfig: {
           nav: [
             { text: '指南', link: '/zh/guide/getting-started' },
-            { text: 'API', link: '/zh/api/' },
             { text: '示例', link: '/zh/examples/' },
           ],
           sidebar: {
@@ -115,18 +104,9 @@ export default withMermaidConfig(
               items: [
                 { text: '什么是 VitePress Mermaid？', link: 'what-is-vitepress-mermaid' },
                 { text: '快速开始', link: 'getting-started' },
-                { text: '配置', link: 'configuration' },
                 { text: '使用', link: 'usage' },
                 { text: '快捷键', link: 'shortcuts' },
                 { text: '开发指南', link: 'development' },
-              ],
-            },
-            '/zh/api/': {
-              base: '/zh/api/',
-              items: [
-                { text: '概览', link: 'index' },
-                { text: '组件', link: 'components' },
-                { text: 'Markdown 插件', link: 'markdown-plugin' },
               ],
             },
             '/zh/examples/': {

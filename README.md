@@ -31,58 +31,34 @@ pnpm add -D vitepress mermaid
 
 ## Usage
 
-### Method 1: Using Theme Extension (Recommended)
-
-In `.vitepress/theme/index.ts`:
-
-```typescript
-import type { Theme } from 'vitepress';
-import mermaidTheme from '@unify-js/vitepress-mermaid';
-
-export default {
-  extends: mermaidTheme,
-} satisfies Theme;
-```
-
-### Method 2: Manual Configuration
-
-For more flexible control, you can configure manually:
-
-```typescript
-import { h } from 'vue';
-import type { Theme } from 'vitepress';
-import DefaultTheme from 'vitepress/theme';
-import { Mermaid, MermaidPreview } from '@unify-js/vitepress-mermaid';
-
-export default {
-  extends: DefaultTheme,
-  enhanceApp({ app }) {
-    app.component('Mermaid', Mermaid);
-    app.component('MermaidPreview', MermaidPreview);
-  },
-  Layout() {
-    return h(DefaultTheme.Layout, null, {
-      'layout-bottom': () => h(MermaidPreview),
-    });
-  },
-} satisfies Theme;
-```
-
-### Configure markdown-it Plugin
+### Step 1: Configure VitePress Config
 
 In `.vitepress/config.ts`:
 
 ```typescript
 import { defineConfig } from 'vitepress';
-import { mermaidMarkdownPlugin } from '@unify-js/vitepress-mermaid';
+import { withMermaidConfig } from '@unify-js/vitepress-mermaid/config';
 
-export default defineConfig({
-  markdown: {
-    config: md => {
-      mermaidMarkdownPlugin(md);
-    },
-  },
-});
+export default withMermaidConfig(
+  defineConfig({
+    // Your VitePress config
+  })
+);
+```
+
+> **Important:** The config helper must be imported from `@unify-js/vitepress-mermaid/config` (with `/config` suffix), not from the root package. This is because VitePress config runs in Node.js, while the theme runs in the browser. Keeping them separate prevents module resolution errors.
+
+### Step 2: Configure Theme
+
+In `.vitepress/theme/index.ts`:
+
+```typescript
+import type { Theme } from 'vitepress';
+import { MermaidTheme } from '@unify-js/vitepress-mermaid';
+
+export default {
+  extends: MermaidTheme,
+} satisfies Theme;
 ```
 
 ## Using in Markdown

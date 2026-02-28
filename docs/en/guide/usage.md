@@ -209,4 +209,3 @@ graph LR
 
 - Explore more [diagram examples](../examples/)
 - Learn [keyboard shortcuts](./shortcuts.md)
-- Check the [API reference](../api/)

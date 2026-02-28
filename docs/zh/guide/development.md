@@ -9,13 +9,15 @@
 ```
 packages/vitepress-mermaid/src/
 ├── components/
+│   ├── index.ts             # 组件统一导出
 │   ├── Mermaid.vue           # 图表渲染组件 (Vue SFC)
 │   ├── MermaidPreview.vue    # 全屏预览组件 (Vue SFC)
 │   ├── useMermaidPreview.ts  # 内部状态管理
 │   └── Layout.vue            # 布局组件（包含预览插槽）
-├── index.ts                  # 主入口，导出所有功能
-├── theme.ts                  # 主题配置，一键集成
-└── mermaid-markdown.ts       # markdown-it 插件
+├── index.ts                  # 浏览器入口，导出 MermaidTheme
+├── config.ts                 # Node.js 入口，导出 withMermaidConfig
+├── mermaid-markdown.ts       # markdown-it 插件实现
+└── env.d.ts                  # 构建/开发环境类型声明
 ```
 
 ### 构建输出
@@ -24,27 +26,51 @@ packages/vitepress-mermaid/src/
 
 ```
 dist/
-├── index.js      # 打包后的 ESM 输出（包含所有组件和逻辑）
-└── index.d.ts    # 类型声明（由 vue-tsc 生成）
+├── index.js      # 浏览器入口打包产物
+├── config.js     # Node.js 配置入口打包产物
+├── index.d.ts    # 浏览器入口类型声明
+└── config.d.ts   # 配置入口类型声明
 ```
 
-所有组件和逻辑都被打包到单个 ESM 文件中，外部依赖（vitepress、mermaid、vue）保持外部化。
+构建产物按浏览器入口与 Node.js 入口拆分，外部依赖（vitepress、mermaid、vue）保持外部化。
 
 ### 导出内容
 
-所有公共 API 都从主入口 `@unify-js/vitepress-plugin-mermaid` 导出：
+公共 API 通过两个入口导出：
 
 ```typescript
-// 默认导出：主题配置
-import mermaidPluginTheme from '@unify-js/vitepress-plugin-mermaid';
+// 浏览器入口（主题）
+import { MermaidTheme } from '@unify-js/vitepress-mermaid';
 
-// 命名导出
-import {
-  mermaidMarkdownPlugin, // Markdown-it 插件
-  Mermaid, // 图表组件
-  MermaidPreview, // 预览弹窗组件
-} from '@unify-js/vitepress-plugin-mermaid';
+// Node.js 入口（VitePress 配置）
+import { withMermaidConfig } from '@unify-js/vitepress-mermaid/config';
 ```
+
+## 重要：导入路径分离
+
+VitePress Mermaid 为不同环境提供两个独立的入口点：
+
+### 配置入口（Node.js）
+
+对于 VitePress 配置文件（`.vitepress/config.ts`），从 `/config` 导入：
+
+```typescript
+import { withMermaidConfig } from '@unify-js/vitepress-mermaid/config';
+```
+
+- `withMermaidConfig` 必须从 `@unify-js/vitepress-mermaid/config` 导入
+
+### 主题入口（浏览器）
+
+对于主题文件（`.vitepress/theme/index.ts`），从根包导入：
+
+```typescript
+import { MermaidTheme } from '@unify-js/vitepress-mermaid';
+```
+
+::: warning 为什么要分开导入？
+配置在 Node.js 中运行，主题在浏览器中运行。主题会导入 `vitepress/theme`，其中包含浏览器专用代码（CSS、字体）。如果一起导入，Node.js 在加载配置时将无法解析这些浏览器模块。
+:::
 
 ## 本地开发
 
@@ -75,4 +101,4 @@ pnpm docs:dev
 - 使用 TypeScript 编写代码
 - 组件使用 `<script setup>` 语法
 - 样式使用 scoped CSS
-- 使用命名导出，默认导出为主题配置
+- 对外公共 API 使用命名导出

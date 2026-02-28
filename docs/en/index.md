@@ -34,7 +34,7 @@ features:
     details: Mobile-friendly with touch gestures support for zooming and panning.
   - icon: ⚡
     title: Easy Integration
-    details: Simple setup with theme extension or manual configuration - your choice.
+    details: Simple setup with theme extension for quick integration.
 ---
 
 <style>

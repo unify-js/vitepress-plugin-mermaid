@@ -32,59 +32,31 @@ pnpm add -D vitepress mermaid
 
 ## Configuration
 
-### Step 1: Configure the Markdown Plugin
+### Step 1: Configure VitePress Config
 
 Create or edit your `.vitepress/config.ts` file:
 
 ```typescript
 import { defineConfig } from 'vitepress';
-import { mermaidMarkdownPlugin } from '@unify-js/vitepress-mermaid';
+import { withMermaidConfig } from '@unify-js/vitepress-mermaid/config';
 
-export default defineConfig({
-  markdown: {
-    config: md => {
-      mermaidMarkdownPlugin(md);
-    },
-  },
-});
+export default withMermaidConfig(
+  defineConfig({
+    // Your VitePress config
+  })
+);
 ```
 
-### Step 2: Configure the Theme (Choose One)
+### Step 2: Configure the Theme
 
-#### Option A: Theme Extension (Recommended)
-
-The easiest way to integrate is by extending the custom theme:
+Create or edit your `.vitepress/theme/index.ts` file:
 
 ```typescript
 import type { Theme } from 'vitepress';
-import mermaidTheme from '@unify-js/vitepress-mermaid';
+import { MermaidTheme } from '@unify-js/vitepress-mermaid';
 
 export default {
-  extends: mermaidTheme,
-} satisfies Theme;
-```
-
-#### Option B: Manual Configuration
-
-For more control, manually register the components:
-
-```typescript
-import { h } from 'vue';
-import type { Theme } from 'vitepress';
-import DefaultTheme from 'vitepress/theme';
-import { Mermaid, MermaidPreview } from '@unify-js/vitepress-mermaid';
-
-export default {
-  extends: DefaultTheme,
-  enhanceApp({ app }) {
-    app.component('Mermaid', Mermaid);
-    app.component('MermaidPreview', MermaidPreview);
-  },
-  Layout() {
-    return h(DefaultTheme.Layout, null, {
-      'layout-bottom': () => h(MermaidPreview),
-    });
-  },
+  extends: MermaidTheme,
 } satisfies Theme;
 ```
 
@@ -134,7 +106,7 @@ graph LR
 
 ## Next Steps
 
-- Learn about [configuration options](./configuration.md)
+- Learn about [development details](./development.md)
 - See more [usage examples](./usage.md)
 - Check out [keyboard shortcuts](./shortcuts.md)
 - Explore [diagram examples](../examples/)

@@ -34,7 +34,7 @@ features:
     details: 移动端友好，支持触摸手势进行缩放和平移操作。
   - icon: ⚡
     title: 轻松集成
-    details: 通过主题扩展或手动配置简单设置 - 任您选择。
+    details: 通过主题扩展快速完成集成。
 ---
 
 <style>

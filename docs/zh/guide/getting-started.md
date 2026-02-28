@@ -32,59 +32,31 @@ pnpm add -D vitepress mermaid
 
 ## 配置
 
-### 第一步：配置 Markdown 插件
+### 第一步：配置 VitePress 配置
 
 创建或编辑您的 `.vitepress/config.ts` 文件：
 
 ```typescript
 import { defineConfig } from 'vitepress';
-import { mermaidMarkdownPlugin } from '@unify-js/vitepress-mermaid';
+import { withMermaidConfig } from '@unify-js/vitepress-mermaid/config';
 
-export default defineConfig({
-  markdown: {
-    config: md => {
-      mermaidMarkdownPlugin(md);
-    },
-  },
-});
+export default withMermaidConfig(
+  defineConfig({
+    // 您的 VitePress 配置
+  })
+);
 ```
 
-### 第二步：配置主题（二选一）
+### 第二步：配置主题
 
-#### 选项 A：主题扩展（推荐）
-
-最简单的集成方式是通过扩展自定义主题：
+创建或编辑您的 `.vitepress/theme/index.ts` 文件：
 
 ```typescript
 import type { Theme } from 'vitepress';
-import mermaidTheme from '@unify-js/vitepress-mermaid';
+import { MermaidTheme } from '@unify-js/vitepress-mermaid';
 
 export default {
-  extends: mermaidTheme,
-} satisfies Theme;
-```
-
-#### 选项 B：手动配置
-
-如需更多控制，请手动注册组件：
-
-```typescript
-import { h } from 'vue';
-import type { Theme } from 'vitepress';
-import DefaultTheme from 'vitepress/theme';
-import { Mermaid, MermaidPreview } from '@unify-js/vitepress-mermaid';
-
-export default {
-  extends: DefaultTheme,
-  enhanceApp({ app }) {
-    app.component('Mermaid', Mermaid);
-    app.component('MermaidPreview', MermaidPreview);
-  },
-  Layout() {
-    return h(DefaultTheme.Layout, null, {
-      'layout-bottom': () => h(MermaidPreview),
-    });
-  },
+  extends: MermaidTheme,
 } satisfies Theme;
 ```
 
@@ -134,7 +106,7 @@ graph LR
 
 ## 下一步
 
-- 了解 [配置选项](./configuration.md)
+- 了解 [开发细节](./development.md)
 - 查看更多 [使用示例](./usage.md)
 - 查看 [键盘快捷键](./shortcuts.md)
 - 浏览 [图表示例](../examples/)
